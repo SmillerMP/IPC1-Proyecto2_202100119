@@ -3,8 +3,11 @@ const express = require('express');
 const res = require('express/lib/response');
 const morgan = require('morgan');
 
+// Llama la base de datos de pokemons
 const pokedex = require('./pokemons.json');
-console.log(pokedex);
+
+// Llama la base de datos de Usuarios
+const Usuarios = require('./usuarios.json');
 
 // Creacion de la API
 const app = express();
@@ -17,23 +20,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 
-// Usuarios
-var Usuarios = [
-    {
-        "User": "Samuel",
-        "Password": "si",
-    },
 
-    {
-        "User": "Mike",
-        "Password": "simon",
-    },
-
-    {
-        "User": "Little",
-        "Password": "claroquesi",
-    },
-];
 
 // Rutas
 app.get('/', (req, res) => {
