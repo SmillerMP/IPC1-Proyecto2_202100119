@@ -1,7 +1,7 @@
 [
 
     {
-        "Numero": "006",
+        "Numero": 6,
         "Nombre": "Charizard ",
         "Tipo": "Fuego",
         "Ataque": "Giro Fuego",
@@ -9,7 +9,7 @@
     },
 
     {
-        "Numero": "037",
+        "Numero": 37, 
         "Nombre": "Vulpix",
         "Tipo": "Fuego",
         "Ataque": "Rayo Confuso",
@@ -17,7 +17,7 @@
     },
 
     {
-        "Numero": "058",
+        "Numero": 58,
         "Nombre": "Growlithe",
         "Tipo": "Fuego",
         "Ataque": "Garras de Fuego",
@@ -25,7 +25,7 @@
     },
 
     {
-        "Numero": "077",
+        "Numero": 77,
         "Nombre": "Ponyta",
         "Tipo": "Fuego",
         "Ataque": "Cola de Fuego",
@@ -33,7 +33,7 @@
     },
 
     {
-        "Numero": "392",
+        "Numero": 392,
         "Nombre": "Infernape",
         "Tipo": "Fuego",
         "Ataque": "Vórtice Infernal",
@@ -41,7 +41,7 @@
     },
 
     {
-        "Numero": "134",
+        "Numero": 134,
         "Nombre": "Vaporeon",
         "Tipo": "Agua",
         "Ataque": "Rayo Aurora",
@@ -49,7 +49,7 @@
     },
 
     {
-        "Numero": "350",
+        "Numero": 350,
         "Nombre": "Milotic",
         "Tipo": "Agua",
         "Ataque": "Golpe Doble",
@@ -57,7 +57,7 @@
     },
 
     {
-        "Numero": "818",
+        "Numero": 818,
         "Nombre": "Inteleon",
         "Tipo": "Agua",
         "Ataque": "Maxibala",
@@ -65,7 +65,7 @@
     },
 
     {
-        "Numero": "009",
+        "Numero": 9,
         "Nombre": "Blastoise",
         "Tipo": "Agua",
         "Ataque": "Hidro Bomba",
@@ -73,7 +73,7 @@
     },
 
     {
-        "Numero": "121",
+        "Numero": 121,
         "Nombre": "Starmie",
         "Tipo": "Agua",
         "Ataque": "Sujeción Equilibrada",
@@ -81,7 +81,7 @@
     },
 
     {
-        "Numero": "497",
+        "Numero": 497,
         "Nombre": "Serperior",
         "Tipo": "Planta",
         "Ataque": "Golpe Cuchillazo",
@@ -89,7 +89,7 @@
     },
 
     {
-        "Numero": "154",
+        "Numero": 154,
         "Nombre": "Meganium",
         "Tipo": "Planta",
         "Ataque": "Rayo Solar",
@@ -97,7 +97,7 @@
     },
 
     {
-        "Numero": "071",
+        "Numero": 71,
         "Nombre": "Victreebel",
         "Tipo": "Planta",
         "Ataque": "Bilis",
@@ -105,7 +105,7 @@
     },
 
     {
-        "Numero": "003",
+        "Numero": 3,
         "Nombre": "Venusaur",
         "Tipo": "Planta",
         "Ataque": "Tifón Solar",
@@ -113,7 +113,7 @@
     },
 
     {
-        "Numero": "045",
+        "Numero": 45,
         "Nombre": "Vileplume",
         "Tipo": "Planta",
         "Ataque": "Rociada de Polen",
