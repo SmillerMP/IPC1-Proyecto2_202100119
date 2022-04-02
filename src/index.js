@@ -88,7 +88,7 @@ app.post('/pokedex', (req, res) => {
     } else if (capitalize(OpcionesBusqueda) == "Tipo"){
 
         Found = false;
-        PokeTemporal.splice();
+        PokeTemporal.splice("");
         for (x of pokedex){
             if(x.Tipo == capitalize(TextoBusqueda) ){
                 
