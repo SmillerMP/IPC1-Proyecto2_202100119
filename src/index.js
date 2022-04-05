@@ -9,14 +9,16 @@ const pokedex = require('./pokemons.json');
 // Llama la base de datos de Usuarios
 const Usuarios = require('./usuarios.json');
 
-// Archivo Json Temporal para la busqeuda de pokemons
+// Archivo JSON Temporal para la busqeuda de pokemons
 const PokeTemporal = require('./pokeTemp.json')
 
 // Pone en mayuscula la primera letra de la palabra
 function capitalize(palabra) {
     return palabra[0].toUpperCase() + palabra.slice(1);
-};
+}
 
+
+var NombreUsuario = "";
 
 // Creacion de la API
 const app = express();
@@ -29,16 +31,33 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 
-// Rutas
-app.get('/', (req, res) => {
-    res.send("Bienvenido a la pantalla principal Mother Fucker")
-});
+// Login de los usuarios
+app.post('/Login', (req, res) => {
+    var Found = true;
+    
+    var LoginUsuario = req.body.LoginUsuario;
+    var LoginPassword = req.body.LoginPassword;
 
+    for (x of Usuarios){
+        if((x.User == LoginUsuario ) && (x.Password == LoginPassword)){
+            res.send("Bienvenido Usuario " + LoginUsuario);
+            NombreUsuario = x.User;
+            console.log(NombreUsuario);
+            Found = true;
+            break;
 
-app.get('/home', (req, res) => {
-    var a = 2;
-    res.send('Bienvenido a mi primera API');
-});
+        } else {
+            Found = false;
+        }
+
+    };
+
+    if(Found == false){
+        res.send("Las credenciales son incorrectas");
+    }
+
+    
+})
 
 
 // Ruta de la pokedex
@@ -50,7 +69,13 @@ app.post('/pokedex', (req, res) => {
   
     // Muestra los datos completos de la Pokedex
     if(((TextoBusqueda == "") && (OpcionesBusqueda == "")) || capitalize(OpcionesBusqueda) == "Todos"){
+        pokedex[0].Usuario = NombreUsuario;
         res.send(pokedex);
+        TextoBusqueda = "";
+        console.log(NombreUsuario);
+        
+
+
 
     // Busqueda de pokemos por numero
     } else if (capitalize(OpcionesBusqueda) == "Numero"){
@@ -109,31 +134,6 @@ app.post('/pokedex', (req, res) => {
     
 });
 
-// Login de los usuarios
-app.post('/Login', (req, res) => {
-    var Found = true;
-    
-    var LoginUsuario = req.body.LoginUsuario;
-    var LoginPassword = req.body.LoginPassword;
-
-    for (x of Usuarios){
-        if((x.User == LoginUsuario ) && (x.Password == LoginPassword)){
-            res.send("Bienvenido Usuario " + LoginUsuario);
-            Found = true;
-            break;
-
-        } else {
-            Found = false;
-        }
-
-    };
-
-    if(Found == false){
-        res.send("Las credenciales son incorrectas");
-    }
-
-    
-});
 
 
 // Enviando en que puerto salen los datas
