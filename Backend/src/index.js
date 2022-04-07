@@ -42,7 +42,6 @@ app.post('/Login', (req, res) => {
         if((x.User == LoginUsuario ) && (x.Password == LoginPassword)){
             res.send("Bienvenido Usuario " + LoginUsuario);
             NombreUsuario = x.User;
-            console.log(NombreUsuario);
             Found = true;
             break;
 
@@ -72,11 +71,8 @@ app.post('/pokedex', (req, res) => {
         pokedex[0].Usuario = NombreUsuario;
         res.send(pokedex);
         TextoBusqueda = "";
-        console.log(NombreUsuario);
+
         
-
-
-
     // Busqueda de pokemos por numero
     } else if (capitalize(OpcionesBusqueda) == "Numero"){
         Found = false;
