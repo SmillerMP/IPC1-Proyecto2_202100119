@@ -27,6 +27,7 @@ async function entrar(){
 
     if (respuestas == 1 ){
         alert('Bienvenido usuario ' + document.getElementById('User').value);
+        location.href = "pokemons.html";
     } else{
         alert("Credenciales Incorrectas");
     }

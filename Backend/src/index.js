@@ -42,10 +42,6 @@ app.use(express.json());
 app.use(cors())
 
 
-app.get('/', (req, res) => {
-    res.render('index.html');
-})
-
 
 
 // Login de los usuarios
@@ -75,10 +71,6 @@ app.post('/Login', (req, res) => {
     
 })
 
-app.get('/Pokedex', (req, res) => {
-    res.send(pokedex);
-})
-
 
 // Ruta de la pokedex
 app.post('/BusquedaPokemons', (req, res) => {
@@ -87,18 +79,20 @@ app.post('/BusquedaPokemons', (req, res) => {
     var OpcionesBusqueda = req.body.OpcionesBusqueda;
 
   
+    if (OpcionesBusqueda == "Seleccionar"){
+        res.send(0);
+    }
     // Muestra los datos completos de la Pokedex
-    if(((TextoBusqueda == "") && (OpcionesBusqueda == "")) || capitalize(OpcionesBusqueda) == "Todos"){
-        pokedex[0].Usuario = NombreUsuario;
+    else if(OpcionesBusqueda == "1"){
         res.send(pokedex);
         TextoBusqueda = "";
 
         
     // Busqueda de pokemos por numero
-    } else if (capitalize(OpcionesBusqueda) == "Numero"){
+    } else if (OpcionesBusqueda == "2"){
         Found = false;
         for (x of pokedex){
-            if(x.Numero == TextoBusqueda ){
+            if(x.Numero == TextoBusqueda){
                 res.send(x);
 
                 Found = true;
@@ -107,11 +101,11 @@ app.post('/BusquedaPokemons', (req, res) => {
         }
     
         if(Found == false){
-            res.send("No se ha encontrado ningun pokemon con este numero");
+            res.send("2");
         }
 
     // Busqueda de pokemons por su nombre
-    } else if (capitalize(OpcionesBusqueda) == "Nombre"){
+    } else if (OpcionesBusqueda == "3"){
         Found = false;
         for (x of pokedex){
             if(x.Nombre == capitalize(TextoBusqueda) ){
@@ -122,12 +116,12 @@ app.post('/BusquedaPokemons', (req, res) => {
             }   
         }
         if(Found == false){
-            res.send("No se ha encontrado ningun pokemon con este numero");
+            res.send("3");
         }
 
     
     // Busqueda de Pokemons por su tipo
-    } else if (capitalize(OpcionesBusqueda) == "Tipo"){
+    } else if (OpcionesBusqueda == "4"){
 
         Found = false;
         PokeTemporal.splice("");
@@ -140,7 +134,7 @@ app.post('/BusquedaPokemons', (req, res) => {
             } 
         }
         if(Found == false){
-            res.send("No se ha encontrado ningun pokemon con este Tipo");
+            res.send("4");
 
         }else{
             res.send(PokeTemporal);

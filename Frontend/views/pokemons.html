@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Pokemons</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/Frontend/CSS/style.css">
@@ -21,7 +21,6 @@
 
 <body>
 
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand " href="#">Pokedex</a>
@@ -29,13 +28,13 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-             <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active " aria-current="page" href="/Frontend/views/index.html">Incio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login</a>
+                        <a class="nav-link" href="login.html">Salir</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -45,37 +44,39 @@
         </div>
     </nav>
 
-    <br><br><br>
-    <p class="text-center fw-bold fs-2">Login de Usuarios</p>
+    <br><br>
+    <p class="text-center fw-bold fs-2">Busqueda de Pokemon's</p>
 
-    <div class="container">
-        <header class="row align-items-center">
-            <div class="col-lg-6 mx-auto">
-                <br><br><br><br>
-                <div class="form-floating my-4">
-                    <input type="text" class="form-control" id="User" placeholder="Usuario">
-                    <label for="floatingInput">Usuario</label>
-                </div>
-                <div class="form-floating">
-                    <input type="password" class="form-control" id="UserPassword" placeholder="Password">
-                    <label for="floatingPassword">Contraseña</label>
+    <br>
 
-                </div>
 
-                
+    <div class="container-fluid ms-5 ">
+        <form class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col-6">
+                <input type="text" class="form-control" id="DatoBusqueda" placeholder="Dato">
             </div>
-        </header>
+
+            <div class="col-6 mr-5">
+                <label class="visually-hidden-focusable" for="TipoBusqueda"></label>
+                <select class="form-select" id="TipoBusqueda">
+                    <option selected>Seleccionar</option>
+                    <option value="1">Todos</option>
+                    <option value="2">Por Numero</option>
+                    <option value="3">Por Nombre</option>
+                    <option value="4">Por Tipo</option>
+                </select>
+            </div>
+            <div class="col-12 mr-5">
+                <button type="button" onClick="BusquedaPokemons()" class="btn btn-warning">Buscar</button>
+            </div>
+    </div>
+    </form>
     </div>
 
-    <center>
-        <br><br>
-        <button type="button"  onClick="entrar()" class="btn btn-success ">Ingresar</button>
-    </center>
-
-    <br><br>
+   
     
 
-    <script type="text/javascript" src="../JS/NewLogin.js"></script>
+    <script type="text/javascript" src="../JS/pokedex.js"></script>
 </body>
 
 </html>
