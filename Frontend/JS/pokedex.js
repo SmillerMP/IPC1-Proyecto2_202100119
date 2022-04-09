@@ -23,10 +23,12 @@ async function BusquedaPokemons(){
         return data
         
     })
-    console.log(respuestas);
+
+    
+
 
     switch(respuestas){
-        case 0:
+        case 1:
             alert("Debe seleccionar un tipo de busqueda");
             break;
         
@@ -40,8 +42,45 @@ async function BusquedaPokemons(){
 
         case 4:
             alert("No se ha encontrado ningun pokemon de este Tipo");
-            break;
+            break; 
+            
+        default:
 
+            let datos = document.querySelector('#cuerpo')
+            datos.innerHTML = '';
+            var id = 0;
+            if(respuestas.length == undefined){
+                id =1;
+                datos.innerHTML += "<tr><td>" +
+                    id+
+                    "</td><td>" +
+                    respuestas.Numero +
+                    "</td><td>" +
+                    respuestas.Nombre +
+                    "</td><td>" +
+                    respuestas.Tipo +
+                    "</td><td>" +
+                    respuestas.Ataque +
+                    "</td></tr>";
+
+            }else{
+                for(let x of respuestas){
+                    id++;
+                    datos.innerHTML += "<tr><td>" +
+                    id+
+                    "</td><td>" +
+                    x.Numero +
+                    "</td><td>" +
+                    x.Nombre +
+                    "</td><td>" +
+                    x.Tipo +
+                    "</td><td>" +
+                    x.Ataque +
+                    "</td></tr>";
+    
+                }
+            }
+            
     }
 
 }

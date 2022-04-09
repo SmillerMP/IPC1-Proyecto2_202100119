@@ -79,11 +79,11 @@ app.post('/BusquedaPokemons', (req, res) => {
     var OpcionesBusqueda = req.body.OpcionesBusqueda;
 
   
-    if (OpcionesBusqueda == "Seleccionar"){
-        res.send(0);
+    if (OpcionesBusqueda == "0"){
+        res.send(1);
     }
     // Muestra los datos completos de la Pokedex
-    else if(OpcionesBusqueda == "1"){
+    if(OpcionesBusqueda == "1"){
         res.send(pokedex);
         TextoBusqueda = "";
 
