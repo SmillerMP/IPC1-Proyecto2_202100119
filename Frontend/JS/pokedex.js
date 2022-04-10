@@ -8,9 +8,6 @@ async function BusquedaPokemons(){
         OpcionesBusqueda: document.getElementById('TipoBusqueda').value
     }
 
-    console.log(data)
-    
-
     const respuestas = await fetch(url,{
         method: 'POST', // or 'PUT' 
         body: JSON.stringify(data), // data can be `string` or {object}!
@@ -23,9 +20,6 @@ async function BusquedaPokemons(){
         return data
         
     })
-
-    
-
 
     switch(respuestas){
         case 1:
@@ -51,16 +45,19 @@ async function BusquedaPokemons(){
             var id = 0;
             if(respuestas.length == undefined){
                 id =1;
-                datos.innerHTML += "<tr><td>" +
+                datos.innerHTML +=
+                    "<tr><td>" +
                     id+
                     "</td><td>" +
-                    respuestas.Numero +
+                    "No. " + respuestas.Numero +
                     "</td><td>" +
                     respuestas.Nombre +
                     "</td><td>" +
                     respuestas.Tipo +
                     "</td><td>" +
                     respuestas.Ataque +
+                    "</td><td>" +
+                    "<img src= " + respuestas.Imagen + ">" +
                     "</td></tr>";
 
             }else{
@@ -69,18 +66,22 @@ async function BusquedaPokemons(){
                     datos.innerHTML += "<tr><td>" +
                     id+
                     "</td><td>" +
-                    x.Numero +
+                    "No. " + x.Numero +
                     "</td><td>" +
                     x.Nombre +
                     "</td><td>" +
                     x.Tipo +
                     "</td><td>" +
                     x.Ataque +
+                    "</td><td>" +
+                    "<img src= " + x.Imagen + ">" +
                     "</td></tr>";
     
                 }
             }
             
     }
+
+    document.getElementById('DatoBusqueda').value = "";
 
 }

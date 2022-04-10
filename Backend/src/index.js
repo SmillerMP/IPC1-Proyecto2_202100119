@@ -13,7 +13,10 @@ const pokedex = require('./pokemons.json');
 const Usuarios = require('./usuarios.json');
 
 // Archivo JSON Temporal para la busqeuda de pokemons
-const PokeTemporal = require('./pokeTemp.json')
+const PokeTemporal = require('./pokeTemp.json');
+
+// Archivo JSON Temporal para el usuario
+const UserTemp = require('./userTemp.json');
 
 const path = require('path');
 
@@ -22,8 +25,6 @@ function capitalize(palabra) {
     return palabra[0].toUpperCase() + palabra.slice(1);
 }
 
-
-var NombreUsuario = "";
 
 // Creacion de la API
 const app = express();
@@ -52,9 +53,9 @@ app.post('/Login', (req, res) => {
     var LoginPassword = req.body.LoginPassword;
 
     for (x of Usuarios){
-        if((x.User == LoginUsuario ) && (x.Password == LoginPassword)){
+        if((x.User == LoginUsuario ) && (x.Password == LoginPassword)){           
             res.send("1");
-            NombreUsuario = x.User;
+            UserTemp.User = x.User;
             Found = true;
             break;
 
@@ -71,6 +72,11 @@ app.post('/Login', (req, res) => {
     
 })
 
+// Envio del nombre de usuario
+app.get('/NombreUser', (req, res) => {
+    res.send(UserTemp);
+})
+
 
 // Ruta de la pokedex
 app.post('/BusquedaPokemons', (req, res) => {
@@ -79,17 +85,17 @@ app.post('/BusquedaPokemons', (req, res) => {
     var OpcionesBusqueda = req.body.OpcionesBusqueda;
 
   
-    if (OpcionesBusqueda == "0"){
-        res.send(1);
+    if (OpcionesBusqueda == "1"){
+        res.send("1");
     }
     // Muestra los datos completos de la Pokedex
-    if(OpcionesBusqueda == "1"){
+    if(OpcionesBusqueda == "2"){
         res.send(pokedex);
         TextoBusqueda = "";
 
         
     // Busqueda de pokemos por numero
-    } else if (OpcionesBusqueda == "2"){
+    } else if (OpcionesBusqueda == "3"){
         Found = false;
         for (x of pokedex){
             if(x.Numero == TextoBusqueda){
@@ -105,7 +111,7 @@ app.post('/BusquedaPokemons', (req, res) => {
         }
 
     // Busqueda de pokemons por su nombre
-    } else if (OpcionesBusqueda == "3"){
+    } else if (OpcionesBusqueda == "4"){
         Found = false;
         for (x of pokedex){
             if(x.Nombre == capitalize(TextoBusqueda) ){
@@ -121,7 +127,7 @@ app.post('/BusquedaPokemons', (req, res) => {
 
     
     // Busqueda de Pokemons por su tipo
-    } else if (OpcionesBusqueda == "4"){
+    } else if (OpcionesBusqueda == "5"){
 
         Found = false;
         PokeTemporal.splice("");

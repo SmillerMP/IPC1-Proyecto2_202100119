@@ -9,8 +9,6 @@ async function entrar(){
         LoginPassword: document.getElementById('UserPassword').value
     }
 
-    console.log(data);
-
     const respuestas = await fetch(url,{
         method: 'POST', // or 'PUT' 
         body: JSON.stringify(data), // data can be `string` or {object}!
@@ -23,7 +21,6 @@ async function entrar(){
         return data
         
     })
-    console.log(respuestas);
 
     if (respuestas == 1 ){
         alert('Bienvenido usuario ' + document.getElementById('User').value);
