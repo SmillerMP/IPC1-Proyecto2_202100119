@@ -118,5 +118,13 @@
         "Tipo": "Planta",
         "Ataque": "Rociada de Polen",
         "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png"
+    },
+
+    {
+        "Numero": "143",
+        "Nombre": "Snorlax",
+        "Tipo": "Normal",
+        "Ataque": "Golpe Cuerpo",
+        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
     }
 ]

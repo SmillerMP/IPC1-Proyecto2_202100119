@@ -21,26 +21,30 @@ async function BusquedaPokemons(){
         
     })
 
+    let datos = document.querySelector('#cuerpo');
+
     switch(respuestas){
         case 1:
+            datos.innerHTML = '';
             alert("Debe seleccionar un tipo de busqueda");
             break;
         
         case 2:
+            datos.innerHTML = '';
             alert("No se ha encontrado ningun pokemon con este Numero");
             break;
 
         case 3:
+            datos.innerHTML = '';
             alert("No se ha encontrado ningun pokemon con este Nombre");
             break;
 
         case 4:
+            datos.innerHTML = '';
             alert("No se ha encontrado ningun pokemon de este Tipo");
             break; 
             
         default:
-
-            let datos = document.querySelector('#cuerpo')
             datos.innerHTML = '';
             var id = 0;
             if(respuestas.length == undefined){

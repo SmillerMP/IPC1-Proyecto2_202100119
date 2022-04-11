@@ -1,5 +1,4 @@
 function GetUserName() {
-    var nombre = "";
     let url = 'http://localhost:8000/NombreUser';
     fetch(url)
         .then((res) => res.json())
@@ -11,6 +10,8 @@ function GetUserName() {
             "<p>" +
             "Bienvenido: " + data.User +
             "</p>";
+
+            document.getElementById('NombreUser').value = "";
         })
 
 }

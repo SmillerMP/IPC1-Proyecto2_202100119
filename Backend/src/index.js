@@ -48,10 +48,9 @@ app.use(cors())
 // Login de los usuarios
 app.post('/Login', (req, res) => {
     var Found = true;
-    
+    UserTemp.User = "";
     var LoginUsuario = req.body.LoginUsuario;
     var LoginPassword = req.body.LoginPassword;
-
     for (x of Usuarios){
         if((x.User == LoginUsuario ) && (x.Password == LoginPassword)){           
             res.send("1");
