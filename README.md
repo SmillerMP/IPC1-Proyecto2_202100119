@@ -27,7 +27,6 @@ Para levantar el servidor es necesario correr el siguiente codigo:
 ```sh
 npm dev run
 ```
-pora este programa el puerto de salida del servidor es el 8000.
 
 #
 #
@@ -78,7 +77,8 @@ En caso que necesite realizar la busqueda por Numero, Nombre y Tipo, es necesari
 ![Pagina de Incio](/Capturas/PokedexTodos.png)
 
 
-En caso que no se encuente ningun pokemon con el dato especificado, la pagina mostrara una alerta detallando el error, y de inmediato borrara cualquier tipo de Pokemon presente en la tabla.
+En caso que no se encuente ningun pokemon con el dato especificado, la pagina mostrara una alerta detallando el error, y de inmediato borrara cualquier tipo de Pokemon presente en la tabla. 
+
 ![Pagina de Incio](/Capturas/PokedexError.png)
 
 #
@@ -102,3 +102,7 @@ En caso que no se encuente ningun pokemon con el dato especificado, la pagina mo
 - **/NombreUser:** es te tipo *GET* y su unica funcion es enviar un archivo JSON temporal donde se almacena el nombre del usuario que ingreso a la Pokedex, de manera que cuando se inicia en la Pokedex se pueda mostrar el nombre del usuario ingresado.
 
 - **/BusquedaPokemons:** es de tipo *POST*, es el que recibe que tipo de busqueda se va a realizar en la pokedex, de modo que filtra los Pokemons presentes en el archivo JSON, de volviendo asi cada uno de los datos del Pokemon respectivo a la busqueda. Tambien se contempla los posibles busqueda por lo que se devuelve su respectivo codigo de error
+
+
+## Servidor Nodejs
+El servidor se encuentra alojado en el puerto **8000**
