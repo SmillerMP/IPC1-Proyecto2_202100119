@@ -21,6 +21,8 @@ async function BusquedaPokemons(){
         
     })
 
+    console.log(respuestas);
+
     let datos = document.querySelector('#cuerpo');
 
     switch(respuestas){
