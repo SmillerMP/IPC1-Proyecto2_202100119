@@ -1,3 +1,7 @@
+function capitalize(palabra) {
+    return palabra[0].toUpperCase() + palabra.toLowerCase().slice(1);
+}
+
 async function BusquedaPokemons() {
     
     
@@ -53,20 +57,21 @@ async function BusquedaPokemons() {
         default:
             // Valores correctos en los que el programa entregara los datos del o los Pokemons
 
+            
 
             if (document.getElementById('TipoBusqueda').value == 5) {
-                var id = 0;
+                var ColorPagina = document.getElementById('DatoBusqueda').value;
 
-                if (document.getElementById('DatoBusqueda').value == "Fuego" || document.getElementById('DatoBusqueda').value == "fuego") {    
+                if (capitalize(ColorPagina) == "Fuego") {    
                     document.getElementById("csscolor").href = "/Frontend/CSS/pokemonsFuego.css";
 
-                } else if (document.getElementById('DatoBusqueda').value == "Agua" || document.getElementById('DatoBusqueda').value == "agua"){
+                } else if (capitalize(ColorPagina) == "Agua"){
                     document.getElementById("csscolor").href = "/Frontend/CSS/pokemonsAgua.css";
 
-                } else if (document.getElementById('DatoBusqueda').value == "Planta" || document.getElementById('DatoBusqueda').value == "planta"){
+                } else if (capitalize(ColorPagina)== "Planta"){
                     document.getElementById("csscolor").href = "/Frontend/CSS/pokemonsPlanta.css";
 
-                } else if (document.getElementById('DatoBusqueda').value == "Normal" || document.getElementById('DatoBusqueda').value == "normal"){
+                } else if (capitalize(ColorPagina) == "Normal"){
                     document.getElementById("csscolor").href = "/Frontend/CSS/pokemonsNormal.css";
                 }
 
@@ -75,7 +80,6 @@ async function BusquedaPokemons() {
             }
 
             
-
             datos.innerHTML = '';
             var id = 0;
             if (respuestas.length == undefined) {
@@ -114,7 +118,6 @@ async function BusquedaPokemons() {
 
                 }
             }
-
     }
 
     document.getElementById('DatoBusqueda').value = "";

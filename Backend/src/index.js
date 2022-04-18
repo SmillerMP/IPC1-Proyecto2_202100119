@@ -1,10 +1,7 @@
 
 const express = require('express');
-const res = require('express/lib/response');
 const morgan = require('morgan');
 const cors = require('cors');
-const ejs = require("ejs");
-
 
 // Llama la base de datos de pokemons
 const pokedex = require('./pokemons.json');
@@ -20,9 +17,9 @@ const UserTemp = require('./userTemp.json');
 
 const path = require('path');
 
-// Pone en mayuscula la primera letra de la palabra
+// Pone en mayuscula la primera letra de la palabra y en minuscula las demas
 function capitalize(palabra) {
-    return palabra[0].toUpperCase() + palabra.slice(1);
+    return palabra[0].toUpperCase() + palabra.toLowerCase().slice(1);
 }
 
 
@@ -34,14 +31,11 @@ const app = express();
 // Salida al puerto
 app.set('port', 8000);
 
-//Incorporacion con ejs
 
-
-
+// Modulos
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors())
-
 
 
 
@@ -67,8 +61,6 @@ app.post('/Login', (req, res) => {
     if (Found == false) {
         res.send("0");
     }
-
-
 })
 
 // Envio del nombre de usuario
@@ -93,7 +85,7 @@ app.post('/BusquedaPokemons', (req, res) => {
         TextoBusqueda = "";
 
 
-        // Busqueda de pokemos por numero
+    // Busqueda de pokemos por numero
     } else if (OpcionesBusqueda == "3") {
         Found = false;
         for (x of pokedex) {
@@ -109,7 +101,7 @@ app.post('/BusquedaPokemons', (req, res) => {
             res.send("2");
         }
 
-        // Busqueda de pokemons por su nombre
+    // Busqueda de pokemons por su nombre
     } else if (OpcionesBusqueda == "4") {
         Found = false;
         if (TextoBusqueda != "") {
@@ -121,7 +113,6 @@ app.post('/BusquedaPokemons', (req, res) => {
                     Found = true;
                     break;
                 }
-
             }
         }
         if (Found == false) {
@@ -129,7 +120,7 @@ app.post('/BusquedaPokemons', (req, res) => {
         }
 
 
-        // Busqueda de Pokemons por su tipo
+    // Busqueda de Pokemons por su tipo
     } else if (OpcionesBusqueda == "5") {
 
         Found = false;
@@ -150,13 +141,8 @@ app.post('/BusquedaPokemons', (req, res) => {
         } else {
             res.send(PokeTemporal);
         }
-
     }
-
-
 });
-
-
 
 // Enviando en que puerto salen los datas
 app.listen(app.get('port'), () => {

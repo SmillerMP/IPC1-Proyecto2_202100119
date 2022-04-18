@@ -1,8 +1,31 @@
 [
-   
+    {
+        "Numero": "132",
+        "Nombre": "Ditto",
+        "Tipo": "Normal",
+        "Ataque": "Maxitransformación",
+        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+    },
+
+    {
+        "Numero": "18",
+        "Nombre": "Pidgeot",
+        "Tipo": "Normal",
+        "Ataque": "Tormenta Giratoria",
+        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png"
+    },
+
+    {
+        "Numero": "39",
+        "Nombre": "Jigglypuff",
+        "Tipo": "Normal",
+        "Ataque": "Canto",
+        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png"
+    },
+
     {
         "Numero": "6",
-        "Nombre": "Charizard ",
+        "Nombre": "Charizard",
         "Tipo": "Fuego",
         "Ataque": "Giro Fuego",
         "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"

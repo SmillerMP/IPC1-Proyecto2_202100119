@@ -4,3 +4,6 @@ body {
     background: linear-gradient(to bottom, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
 }
+
+.CentradoTabla{text-align:center}
+
