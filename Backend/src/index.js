@@ -15,7 +15,6 @@ const PokeTemporal = require('./pokeTemp.json');
 // Archivo JSON Temporal para el usuario
 const UserTemp = require('./userTemp.json');
 
-const path = require('path');
 
 // Pone en mayuscula la primera letra de la palabra y en minuscula las demas
 function capitalize(palabra) {
@@ -35,7 +34,7 @@ app.set('port', 8000);
 // Modulos
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 
 
