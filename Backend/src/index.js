@@ -12,8 +12,6 @@ const Usuarios = require('./usuarios.json');
 // Archivo JSON Temporal para la busqeuda de pokemons
 const PokeTemporal = require('./pokeTemp.json');
 
-// Archivo JSON Temporal para el usuario
-const UserTemp = require('./userTemp.json');
 
 
 // Pone en mayuscula la primera letra de la palabra y en minuscula las demas
@@ -41,13 +39,11 @@ app.use(cors());
 // Login de los usuarios
 app.post('/Login', (req, res) => {
     var Found = true;
-    UserTemp.User = "";
     var LoginUsuario = req.body.LoginUsuario;
     var LoginPassword = req.body.LoginPassword;
     for (x of Usuarios) {
         if ((x.User == LoginUsuario) && (x.Password == LoginPassword)) {
             res.send("1");
-            UserTemp.User = x.User;
             Found = true;
             break;
 
@@ -60,11 +56,6 @@ app.post('/Login', (req, res) => {
     if (Found == false) {
         res.send("0");
     }
-})
-
-// Envio del nombre de usuario
-app.get('/NombreUser', (req, res) => {
-    res.send(UserTemp);
 })
 
 
