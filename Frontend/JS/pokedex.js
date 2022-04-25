@@ -30,24 +30,29 @@ async function BusquedaPokemons() {
 
     switch (respuestas) {
         // Posibles errores desde el 1 hasta el 4
+
+        // Codigo error 1: no selecciono ningun tipo de busqueda
         case 1:
             datos.innerHTML = '';
             document.getElementById("csscolor").href = "/Frontend/CSS/style.css";
             alert("Debe seleccionar un tipo de busqueda");
             break;
 
+        // Codigo error 2: no existe pokemon con este numero
         case 2: 
             datos.innerHTML = '';
             document.getElementById("csscolor").href = "/Frontend/CSS/style.css";
             alert("No se ha encontrado ningun pokemon con este Numero");
             break;
 
+        // Codigo error 3: No existe pokemon con este nombre
         case 3:
             datos.innerHTML = '';
             document.getElementById("csscolor").href = "/Frontend/CSS/style.css";
             alert("No se ha encontrado ningun pokemon con este Nombre");
             break;
 
+        // Codigo error 4: No existe pokemons de ese tipo
         case 4:
             datos.innerHTML = '';
             document.getElementById("csscolor").href = "/Frontend/CSS/style.css";
@@ -59,7 +64,7 @@ async function BusquedaPokemons() {
 
             
 
-            if (document.getElementById('TipoBusqueda').value == 5) {
+            if (document.getElementById('TipoBusqueda').value == "Tipo") {
                 var ColorPagina = document.getElementById('DatoBusqueda').value;
 
                 if (capitalize(ColorPagina) == "Fuego") {    

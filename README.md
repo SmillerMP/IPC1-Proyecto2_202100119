@@ -103,6 +103,8 @@ En caso que no se encuentre ningún Pokemon con el dato especificado, la pagina 
 ## Servidor Nodejs
 El servidor se encuentra alojado en el puerto **8000**
 
+#
+
 ## Usuarios por defecto
 
 | Usuario | Contraseña|
@@ -110,3 +112,14 @@ El servidor se encuentra alojado en el puerto **8000**
 | Samuel | si |
 | Mike | simon |
 | Little | claro |
+
+#
+
+## Usuarios por defecto
+
+| Codigo de Error | Definicion|
+| ------ | ------ |
+| No. 1 | No seleccionar un tipo de Pokemon para buscar |
+| No. 2 | No se ha encontrado ningun Pokemon con ese Numero |
+| No. 3 | No se ha encontrado ningun Pokemon con ese Nombre |
+| No. 4 | No se ha encontrado ningun grupo de Pokemons de ese Tipo |

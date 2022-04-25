@@ -65,18 +65,21 @@ app.post('/BusquedaPokemons', (req, res) => {
     var TextoBusqueda = req.body.TextoBusqueda;
     var OpcionesBusqueda = req.body.OpcionesBusqueda;
 
+    
 
-    if (OpcionesBusqueda == "1") {
+    // Opcion defoult html
+    if (capitalize(OpcionesBusqueda) == "Seleccionar") {
+        // Codigo error 1: no selecciono ningun tipo de busqueda
         res.send("1");
     }
     // Muestra los datos completos de la Pokedex
-    if (OpcionesBusqueda == "2") {
+    if (capitalize(OpcionesBusqueda)  == "Todos") {
         res.send(pokedex);
         TextoBusqueda = "";
 
 
     // Busqueda de pokemos por numero
-    } else if (OpcionesBusqueda == "3") {
+    } else if (capitalize(OpcionesBusqueda) == "Numero") {
         Found = false;
         for (x of pokedex) {
             if (x.Numero == TextoBusqueda) {
@@ -88,11 +91,13 @@ app.post('/BusquedaPokemons', (req, res) => {
         }
 
         if (Found == false) {
+
+            // Codigo error 2: no existe pokemon con este numero
             res.send("2");
         }
 
     // Busqueda de pokemons por su nombre
-    } else if (OpcionesBusqueda == "4") {
+    } else if (capitalize(OpcionesBusqueda)  == "Nombre") {
         Found = false;
         if (TextoBusqueda != "") {
             for (x of pokedex) {
@@ -106,12 +111,13 @@ app.post('/BusquedaPokemons', (req, res) => {
             }
         }
         if (Found == false) {
+            // Codigo error 3: No existe pokemon con este nombre
             res.send("3");
         }
 
 
     // Busqueda de Pokemons por su tipo
-    } else if (OpcionesBusqueda == "5") {
+    } else if (capitalize(OpcionesBusqueda)  == "Tipo") {
 
         Found = false;
         if (TextoBusqueda != "") {
@@ -126,6 +132,7 @@ app.post('/BusquedaPokemons', (req, res) => {
             }
         }
         if (Found == false) {
+            // Codigo error 4: No existe pokemons de ese tipo
             res.send("4");
 
         } else {

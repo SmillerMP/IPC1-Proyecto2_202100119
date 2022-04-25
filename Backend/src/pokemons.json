@@ -24,6 +24,22 @@
     },
 
     {
+        "Numero": "143",
+        "Nombre": "Snorlax",
+        "Tipo": "Normal",
+        "Ataque": "Golpe Cuerpo",
+        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
+    },
+
+    {
+        "Numero": "53",
+        "Nombre": "Persian",
+        "Tipo": "Normal",
+        "Ataque": "Mordisco",
+        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png"
+    },
+
+    {
         "Numero": "6",
         "Nombre": "Charizard",
         "Tipo": "Fuego",
@@ -141,13 +157,6 @@
         "Tipo": "Planta",
         "Ataque": "Rociada de Polen",
         "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png"
-    },
-
-    {
-        "Numero": "143",
-        "Nombre": "Snorlax",
-        "Tipo": "Normal",
-        "Ataque": "Golpe Cuerpo",
-        "Imagen": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png"
     }
+
 ]
