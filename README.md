@@ -115,7 +115,7 @@ El servidor se encuentra alojado en el puerto **8000**
 
 #
 
-## Usuarios por defecto
+## Codigos y sus definiciones
 
 | Codigo de Error | Definicion|
 | ------ | ------ |
